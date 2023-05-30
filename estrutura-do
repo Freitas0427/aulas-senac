@@ -1,0 +1,24 @@
+package Senac;
+
+import java.util.Scanner;
+
+public class estrutura_do {
+
+	public static void main(String[] args) {
+		int base;
+		int altura;
+		float area;
+		Scanner teclado = new Scanner(System.in);
+		do {
+			System.out.println("Digite a base: ");
+			base = teclado.nextInt();
+		} while (base <= 0);
+		do {
+			System.out.print("Digite sua altura; ");
+			altura = teclado.nextInt();
+		} while (altura <= 0);
+			area = base*altura; {
+			System.out.println("A area é: "+ area);
+		}
+	}
+}

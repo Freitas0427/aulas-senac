@@ -7,7 +7,7 @@ public class FatiasdepizzaMetodos {
 	static int  fatias=0;
 	static String nomePizza="Qualquer";
 	static Scanner sc = new Scanner(System.in);
-	
+	//BABACA
 	
 	   public static void main (String[] args) {		    
 		   pizza = escolhaUmaPizza(pizza, sc);

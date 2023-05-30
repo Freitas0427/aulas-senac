@@ -1,0 +1,72 @@
+package Senac;
+import java.util.Scanner;
+public class FatiasdepizzaMetodos {
+	  
+	//Variaveis
+	static char pizza='i';
+	static int  fatias=0;
+	static String nomePizza="Qualquer";
+	static Scanner sc = new Scanner(System.in);
+	
+	
+	   public static void main (String[] args) {		    
+		   pizza = escolhaUmaPizza(pizza, sc);
+		   fatias = quantidadedeFatias(fatias, pizza, sc);
+		   nomePizza = nomeTamanho(nomePizza, pizza);
+		   sc.close();
+
+		   //Texto
+		   System.out.println ("Você escolheu uma pizza " + nomePizza + " de " + fatias + " Fatias!");
+
+	
+ }
+	
+	// Ecolha a pizza
+static char escolhaUmaPizza(char pizza, Scanner sc) {
+	boolean escolhaPizza = false;
+
+	
+	  while(!escolhaPizza) {	  
+		  System.out.println("Escolha a sua pizza!");
+		  System.out.print("Use apenas a primeira letra! Media = M, Grande = G, Gigante = X ) -> ");
+		  pizza = sc.next().charAt(0);
+		  if (pizza == 'M' || pizza == 'G'|| pizza == 'X' || pizza == 'm' || pizza == 'g'|| pizza == 'x') {
+			  escolhaPizza=true;				  
+		  }	else {
+			  System.out.println("--->Opcao Invalida!<---");
+			  System.out.println("");
+		  }
+				 if (pizza == 'm') pizza='M';
+				 if (pizza == 'g') pizza='G';
+				 if (pizza == 'x') pizza='X';
+}
+ return pizza;
+}
+
+//escolha quantidade de fatias 
+static int quantidadedeFatias(int fatias, char pizza, Scanner sc) {
+
+	boolean escolhaFatias = false;
+	
+	while (!escolhaFatias) {
+	System.out.print ("Quantas fatias serão cortadas? -> ");
+	fatias = sc.nextInt();
+	if (pizza == 'M' && fatias <= 6 || pizza == 'G' && fatias <= 8 || pizza == 'X' && fatias <= 12) {
+		if(fatias<0) System.out.println("Número de fatias não pode ser menor que 0");	
+		else escolhaFatias=true;			
+	}	else {
+		System.out.println("Opção Invalida!");				
+	}	
+}
+return fatias;
+}
+
+//Nome do tamanho da pizza
+static String nomeTamanho(String nomePizza, char pizza) {
+if (pizza == 'M') nomePizza=("Média");
+if (pizza == 'G') nomePizza=("Grande");
+if (pizza == 'X') nomePizza=("Gigante");	
+
+return nomePizza;
+}
+}

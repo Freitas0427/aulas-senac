@@ -1,0 +1,31 @@
+package Senac;
+
+import java.util.Scanner;
+
+public class estruturaifscanner {
+	public static void main(String[] args) {
+
+		int idade;
+		String nome;
+		Scanner teclado = new Scanner(System.in);
+		System.out.println("DIgite seu nome: ");
+		nome = teclado.next();
+		System.out.println("Digite sua idade: ");
+		idade = teclado.nextInt();
+		System.out.println(" nome: " + nome + " Idade: " + idade);
+		if (idade >16 && idade<18 || idade>65) {
+			System.out.println("Voto não obrigatorio");
+		} 
+		else if(idade >=18 && idade<65) {
+			System.out.println("Voto obrigatorio");
+		
+		}
+		else if(idade<16){
+			System.out.println("Não pode votar");
+			
+		}
+		else {
+			System.out.println("Digita um valor correto");
+		}
+		}
+	}
